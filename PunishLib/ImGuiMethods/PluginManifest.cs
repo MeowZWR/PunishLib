@@ -2,7 +2,6 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System;
-using Dalamud.Common.Game;
 
 #nullable enable
 namespace PunishLib.ImGuiMethods
@@ -92,8 +91,7 @@ namespace PunishLib.ImGuiMethods
         /// Gets the version of the game this plugin works with.
         /// </summary>
         [JsonProperty]
-        [JsonConverter(typeof(GameVersionConverter))]
-        public GameVersion? ApplicableVersion { get; init; } = GameVersion.Any;
+        public string? ApplicableVersion { get; init; } = "any";
 
         /// <summary>
         /// Gets the API level of this plugin. For the current API level, please see <see cref="PluginManager.DalamudApiLevel"/>
